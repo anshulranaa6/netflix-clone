@@ -1,0 +1,469 @@
+/* Ensure the body takes up the full viewport height */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif; 
+    box-sizing: border-box; /* Ensure consistent box sizing */
+}
+
+/* Main container with background image */
+.main {
+    background-image: url(/img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue; 
+    text-align: center;
+    position: relative; 
+}
+
+/* Navigation bar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 1rem; 
+    left: 1rem; 
+    right: 1rem;
+    background-color: transparent; 
+    padding: 1rem; 
+    z-index: 10; /* Ensure the nav is on top of the .back overlay */
+}
+
+/* Logo styles */
+nav img {
+    height: 3rem; 
+    width: auto; 
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+nav .button1 {
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    color: aliceblue;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav .button1:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation button styles */
+nav button {
+    background-color: red;
+    border: 1px solid black;
+    color: aliceblue;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: darkred;
+}
+
+/* Overlay for background effect */
+.back {
+    background-color: rgba(0, 0, 0, 0.7); 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5; /* Ensure the .back is below the nav and text overlay */
+}
+
+/* Text overlay styles */
+.text-overlay {
+    position: relative; 
+    z-index: 15; /* Ensure the text is on top of the .back overlay */
+    color: white;
+    margin-top: 12rem;
+    height: auto; /* Adjusted for dynamic content */
+    text-align: center;
+}
+
+.text-overlay h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: white; 
+}
+
+.text-overlay p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: white; 
+}
+
+.text-overlay input {
+    height: 50px;
+    width: 250px;
+    border-radius: 6px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0 1rem; /* Add some padding inside the input */
+    box-sizing: border-box;
+}
+
+.text-overlay input::placeholder {
+    color: white;
+}
+
+.text-overlay button {
+    background-color: red;
+    height: 55px;
+    width: 150px;
+    border-radius: 6px;
+    border: 1px solid black;
+    color: aliceblue;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.text-overlay button:hover {
+    background-color: darkred;
+}
+
+/* Horizontal lines */
+.line {
+    height: 7px;
+    width: 100%;
+    background-color: rgb(35, 33, 33);
+}
+
+/* Menu section */
+.menu {
+    width: 100%;
+    background-color: black;
+}
+
+.movie {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items apart */
+    width: 100%;
+    height: 45rem;
+    padding: 2rem; /* Optional: add some padding for spacing */
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+.text-col {
+    flex: 1; /* Allow text column to take up available space */
+    color: white;
+    margin-right: 2rem; /* Space between text and image */  
+}
+
+.img-col {
+    flex: 1; /* Allow image column to take up available space */
+}
+
+.movie img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;    /* Maintain aspect ratio */
+    border-radius: 6px; /* Optional: rounded corners */
+}
+
+.text-col h1 {
+    font-size: 3rem; /* Adjust as needed */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    margin: 0;
+    padding: 0;
+}
+
+.text-col p {
+    font-size: 1.25rem; /* Adjust as needed */
+    line-height: 1.5; /* Adjust line height for better readability */
+    margin: 0; /* Remove default margin */
+    padding: 0;
+}
+
+/* Accordion section */
+.menu2 {
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    color: aliceblue;
+    padding: 2rem;
+}
+
+.menu2 h2{
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+.accordion {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 1200px; /* Restrict max-width for better readability */
+}
+
+.accordion li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem; /* Space between accordion items */
+    border: 1px solid rgb(55, 54, 54);
+    border-radius: 6px;
+}
+
+.accordion input[type="radio"] {
+    display: none; /* Hide radio buttons */
+}
+
+.accordion label {
+    cursor: pointer;
+    padding: 1rem;
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+   font-size: 1.5rem;
+   display: flex;
+   justify-content: space-between;
+}
+label::after{
+    content: '+';
+    font-size: 2rem;
+}
+
+.accordion label:hover {
+    background-color: #333;
+}
+
+.accordion .content {
+    display: none;
+    padding: 1rem;
+    background-color: #111;
+}
+
+.accordion input:checked + label + .content {
+    display: block;
+}
+
+.footer{
+    background-color: black;
+    height: 25rem;
+    position: relative;
+}
+
+.start {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.start p{
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+ .start input{
+    width: 650px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 2px solid whitesmoke;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+
+.start button{
+    width: 150px;
+    height: 65px;
+    background-color: red;
+    border-radius: 6px;
+    border: 2px solid black;
+    color: whitesmoke;
+    font-size: 1.3rem;    
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer1 {
+    color: #ffffff;
+    padding: 2rem;
+    font-size: 0.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.footer-section {
+    flex: 1 1 22%; 
+    margin-left: 10rem;
+    margin-bottom: 1rem;
+}
+
+/* .footer-section:last-child {
+    margin-right: 0; 
+}  */
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #b3b3b3;
+}
+
+.social-media a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #b3b3b3;
+}
+
+
+@media (max-width: 767px) {
+    .text-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-overlay p {
+        font-size: 1rem;
+    }
+
+    .text-overlay input, .text-overlay button {
+        width: 90%;
+        max-width: none;
+    }
+
+    .movie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .accordion label::after {
+        content: '+';
+    }
+
+    .footer{
+        height: 47rem;
+    }
+    .footer1 {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+        margin-right: 25rem;
+    }
+
+    .start {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .start input, .start button {
+        width: 90%; /* Adjust input and button widths */
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .social-media a {
+        margin: 0.5rem;
+        font-size: 0.875rem; /* Adjust font size for social media links */
+    }
+}
+
+/* Tablets and Small Desktops */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-overlay h1 {
+        font-size: 3rem;
+    }
+
+    .text-overlay p {
+        font-size: 1.25rem;
+    }
+
+    .movie {
+        flex-direction: row;
+    }
+
+    .accordion {
+        max-width: 90%;
+    }
+
+.footer1 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.875rem; /* Adjust font size */
+}
+
+.footer-section {
+    flex: 1 1 48%; /* Two columns with space between */
+    text-align: left; /* Align text left for better readability */
+}
+
+.social-media {
+    margin-top: 1rem;
+}
+
+.social-media a {
+    margin: 0.5rem;
+    font-size: 1rem; /* Adjust font size for social media links */
+}
+}
